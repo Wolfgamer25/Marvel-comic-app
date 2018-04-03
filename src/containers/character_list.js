@@ -30,7 +30,7 @@ class CharacterList extends Component {
           <p className="character-desc">{characterDesc}</p>
           <h4>Featured In</h4>
           <ul className="comic-list">
-              {comics.map(x => (<li key={x.resourceURI}><Link to="/comic" onClick={this.onComicClick} comic-data={x.resourceURI}>{x.name}</Link></li>) )}
+              {comics.map(x => (<li http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" key={x.resourceURI}><Link to="/comic" onClick={this.onComicClick} comic-data={x.resourceURI}>{x.name}</Link></li>) )}
           </ul>
         </div>
       </div>
