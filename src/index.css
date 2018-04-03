@@ -3,3 +3,82 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+input.form-control.search-bar {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+form.search {
+    display:  flex;
+    width:  60%;
+    margin:  0 auto;
+    margin-top: 10px;
+}
+img#logo {
+    /* width: 200px; */
+    height: 125px;
+}
+
+.search form {
+    width: 40%;
+    display: flex;
+    height: 38px;
+    margin: auto 0;
+}
+.search {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.character-list {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+img.character-img {
+    height: 300px;
+}
+.description {
+    padding: 0px 30px;
+}
+.Details {
+    display:  flex;
+    width: 70%;
+    margin: 0 auto;
+}
+.detail {
+    padding-top: 50px;
+    padding-left: 4%;
+}
+ul.comic-list {
+    list-style:  none;
+    height:  200px;
+    overflow-y: scroll;
+}
+
+ul.comic-list li {
+    margin: 5px 0;
+}
+
+ul.comic-list li a {
+    color: red;
+}
+a.back-button {
+    margin-left: 30px;
+}
+i.fas.fa-arrow-alt-circle-left {
+    color:  rgb(255, 26, 35);
+    font-size: 26px;
+    margin-right: 10px;
+}
+.back-button {
+    display:  flex;
+    width: 70%;
+    margin: 20px auto;
+    color:  red;
+}
+.loading {
+    text-align: center;
+}

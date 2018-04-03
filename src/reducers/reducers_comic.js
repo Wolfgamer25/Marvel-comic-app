@@ -1,12 +1,13 @@
 import { FETCH_COMIC } from '../actions/index';
 
-export default function(state=[], action){
+export default function(state={}, action){
   switch(action.type){
     case FETCH_COMIC:
       if(action.error){
         return state;
       }
-      return [action.payload.data, ...state ];
+      return  action.payload.data.data.results;
+    default:
+      return state;
   }
-  return state
 }

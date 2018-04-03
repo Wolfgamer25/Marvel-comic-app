@@ -2,9 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
-import { fetchComics } from '../actions/index';
-import { FormControl, Button } from 'react-bootstrap'
+import Logo  from '../image/Marvel-Logo.png';
+import { fetchCharacter } from '../actions/index';
 
 
 class SearchBar extends Component {
@@ -17,29 +16,33 @@ class SearchBar extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
   onInputChange(e){
-    console.log(e.target.value);
     this.setState({term:e.target.value})
   }
   onFormSubmit(e){
-      e.preventDefualt();
-      this.props.fetchComic(this.state.term);
-      this.setState({term:''})
+      e.preventDefault();
+      const timestamp = Date.now();
+      this.props.fetchCharacter(this.state.term, timestamp);
+      this.setState({term:''});
   }
   render(){
     return(
-      <form>
-        <FormControl
+      <div className="search">
+      <img src={Logo} id="logo" />
+      <form onSubmit={this.onFormSubmit}>
+        <input
           value={this.state.term}
           onChange={this.onInputChange}
+          className="form-control search-bar"
            />
         <span className="input-group-btn">
-          <Button type="submit" className="btn btn-secondary">Submit</Button>
+          <button type="submit">Submit</button>
         </span>
       </form>
+    </div>
     )
   }
 }
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchComics }, dispatch)
+  return bindActionCreators({ fetchCharacter }, dispatch)
 }
 export default connect(null, mapDispatchToProps)(SearchBar);
