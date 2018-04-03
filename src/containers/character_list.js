@@ -14,8 +14,8 @@ class CharacterList extends Component {
   onComicClick(e){
     const timeStamp = Date.now();
     const comicUrl = e.target.attributes.getNamedItem('comic-data').value;
-    console.log('comic', comicUrl)
-    this.props.fetchComic(comicUrl, timeStamp);
+    const httpChange = comicUrl.replace('http', 'https');
+    this.props.fetchComic(httpChange, timeStamp);
   }
   renderCharacter(characterData){
     const characterName = characterData.name ;
@@ -31,7 +31,8 @@ class CharacterList extends Component {
           <p className="character-desc">{characterDesc}</p>
           <h4>Featured In</h4>
           <ul className="comic-list">
-              {comics.map(x => (<li key={x.resourceURI}><Link to="/comic" onClick={this.onComicClick} comic-data={x.resourceURI}>{x.name}</Link></li>) )}
+            {console.log(comics)}
+              {comics.map(x => (<li key={x.resourceURI} ><Link to="/comic" onClick={this.onComicClick} comic-data={x.resourceURI}>{x.name}</Link></li>) )}
           </ul>
         </div>
       </div>
