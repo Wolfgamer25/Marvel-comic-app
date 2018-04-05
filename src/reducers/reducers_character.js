@@ -4,7 +4,7 @@ export default function(state=[], action){
   switch(action.type){
     case FETCH_CHARACTER:
       const empty = action.payload.data.data.results;
-      console.log(empty)
+      console.log('empty',empty)
       if(empty[0] === undefined){
         return state;
       }

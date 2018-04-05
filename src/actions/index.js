@@ -21,9 +21,9 @@ export function fetchCharacter(character, timeStamp){
 
 export function fetchComic(comicUrl, timeStamp){
   const HASH = md5(timeStamp+PRIVATE_KEY+API_KEY);
-  console.log(comicUrl)
   const url = `${comicUrl}?apikey=${API_KEY}&ts=${timeStamp}&hash=${HASH}`;
-  const request = axios.get(url);
+  const changedUrl = url.replace('http', 'https')
+  const request = axios.get(changedUrl);
 
   return{
     type: FETCH_COMIC,
