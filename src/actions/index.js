@@ -22,7 +22,7 @@ export function fetchCharacter(character, timeStamp){
 export function fetchComic(comicUrl, timeStamp){
   const HASH = md5(timeStamp+PRIVATE_KEY+API_KEY);
   const url = `${comicUrl}?apikey=${API_KEY}&ts=${timeStamp}&hash=${HASH}`;
-  const changedUrl = url.replace('http', 'https')
+  const changedUrl = url.replace('http', 'https'
   const request = axios.get(changedUrl);
 
   return{

@@ -14,10 +14,8 @@ class CharacterList extends Component {
   onComicClick(e){
     const timeStamp = Date.now();
     const comicUrl = e.target.attributes.getNamedItem('comic-data').value;
-    console.log('hello')
     this.props.fetchComic(comicUrl, timeStamp);
   }
-
   renderCharacter(characterData){
     const characterName = characterData.name ;
     const characterId = characterData.id;
